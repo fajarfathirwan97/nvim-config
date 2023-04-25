@@ -3,6 +3,16 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/playground'
 	use 'tpope/vim-fugitive'
 	use 'sbdchd/neoformat'
+    use 'nvim-tree/nvim-web-devicons'
+    use {
+    'nvim-tree/nvim-tree.lua',
+        requires = {
+        'nvim-tree/nvim-web-devicons', -- optional
+        },
+        config = function()
+        require("nvim-tree").setup {}
+        end
+    }
 	use {
 	    "williamboman/mason.nvim",
 	    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
